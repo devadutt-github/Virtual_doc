@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Skin cancer predictor</title>
+</head>
+<body>
+	<body style="background-color:powderblue;">
+	<center><h1><b>Report by skin cancer predictor!</b></h1></center>
+	<hr>
+    {% for file in files %}
+      <img src="{{ url_for('upload', filename=file) }}" style="width: 64px">
+    {% endfor %}
+	<div class="result" align="center" style="background-color:sandybrown">
+			<h5>
+			<br><p> Melanocytic nevi : {{data[0]}}</p>
+			<br><p> Melanoma : {{data[1]}}</p>
+			<br><p> Benign keratosis-like lesions  : {{data[2]}}</p>
+			<br><p> Basal cell carcinoma : {{data[3]}}</p>
+			<br><p> Actinic keratoses : {{data[4]}}</p>
+			<br><p> Vascular lesion : {{data[5]}}</p>
+			<br><p> Dermatofibroma : {{data[6]}}</p>
+            </h5>
+	</div>
+	<form action="https://groups.google.com/g/skin-cancer-detection">
+		<center> <p>Visit our group for detailed discussion   <input type="submit" value="Chat Group" /></p> </center>
+	</form>
+	
+    <form action= "{{url_for('find')}}" method="post">  
+		<center><p>Search for clinic in your location<input type="text" name="query">hit enter</p></center>
+	</form>
+</html>
+</body>
