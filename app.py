@@ -6,6 +6,7 @@ import PIL
 import glob
 import re
 import numpy as np
+import gdown
 
 
 # Keras
@@ -23,7 +24,10 @@ app = Flask(__name__)
 app.config['UPLOAD_PATH'] = 'uploads'
 
 # Model saved with Keras model.save()
-MODEL_PATH = '/home/dev/Downloads/full_skin_cancer_model.h5'
+url = 'https://drive.google.com/uc?id=1Ql7jwGUl1EeYOoPAxs7u3FUNrHgU9Zlz'
+output = 'ful_skin_cancer_model.h5'
+gdown.download(url, output, quiet=False)
+MODEL_PATH = 'Virtual_doc/ful_skin_cancer_model.h5'
 
 # Load your trained model
 model = load_model(MODEL_PATH)
