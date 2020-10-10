@@ -1,0 +1,12 @@
+Flask==1.1.2
+gunicorn==19.9.0
+itsdangerous==1.1.0
+Jinja2==2.10.1
+MarkupSafe==1.1.1
+Werkzeug==0.15.5
+numpy>=1.9.2
+Keras==2.4.3
+tensorflow==2.3.0
+Pillow==7.2.0
+beautifulsoup4==4.9.3
+google==3.0.0  
